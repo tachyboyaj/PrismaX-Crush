@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+<title>PrismaX Crush</title>
+<meta name="description" content="PrismaX Crush – Premium match-3 puzzle game with 30 levels"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="screen-login" class="screen active">
+  <div class="login-card">
+    <div class="game-logo">
+      <h1>PrismaX<br><span>Crush</span></h1>
+      <p class="logo-sub">Match the Legends · Rule the Prism</p>
+    </div>
+    <div class="input-wrap">
+      <input id="username-input" type="text" placeholder="Enter your name, Legend…" maxlength="18" autocomplete="off"/>
+    </div>
+    <button id="btn-start" class="btn-primary">Start Crushing</button>
+  </div>
+</div>
+
+<!-- GAME -->
+<div id="screen-game" class="screen">
+  <div class="hud">
+    <div class="hud-block"><span class="hud-label">LEVEL</span><span class="hud-val" id="hud-level">1</span></div>
+    <div class="hud-block center"><span class="hud-label">SCORE</span><span class="hud-val" id="hud-score">0</span><span class="hud-target">TARGET <b id="hud-target">0</b></span></div>
+    <div class="hud-block"><span class="hud-label">MOVES</span><span class="hud-val" id="hud-moves">30</span><button id="btn-settings" class="gear-btn">⚙️</button></div>
+  </div>
+  <div class="progress-wrap"><div id="progress-fill" class="progress-fill"></div></div>
+  <div id="board-container"><div id="board"></div></div>
+</div>
+
+<!-- SETTINGS -->
+<div id="panel-settings" class="overlay hidden">
+  <div class="modal">
+    <h2>⚙️ Paused</h2>
+    <button id="btn-resume" class="btn-primary">▶ Resume</button>
+    <button id="btn-restart" class="btn-secondary">🔄 Restart Level</button>
+    <button id="btn-home" class="btn-ghost">🏠 Home</button>
+  </div>
+</div>
+
+<!-- WIN -->
+<div id="panel-win" class="overlay hidden">
+  <div class="modal">
+    <div class="result-icon">🏆</div>
+    <h2 id="win-title">Level Complete!</h2>
+    <p id="win-msg"></p>
+    <div id="win-stars" class="stars"></div>
+    <button id="btn-next" class="btn-primary">Next Level ➜</button>
+    <button id="btn-win-home" class="btn-ghost">🏠 Home</button>
+  </div>
+</div>
+
+<!-- LOSE -->
+<div id="panel-lose" class="overlay hidden">
+  <div class="modal">
+    <div class="result-icon">💔</div>
+    <h2>Out of Moves!</h2>
+    <p id="lose-msg"></p>
+    <button id="btn-retry" class="btn-primary">🔄 Try Again</button>
+    <button id="btn-lose-home" class="btn-ghost">🏠 Home</button>
+  </div>
+</div>
+
+<!-- VICTORY -->
+<div id="panel-victory" class="overlay hidden">
+  <div class="modal">
+    <div class="result-icon">👑</div>
+    <h2>All 30 Levels Conquered!</h2>
+    <p id="victory-msg"></p>
+    <button id="btn-again" class="btn-primary">Play Again 🔁</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
